@@ -1,7 +1,27 @@
 import classes from "./July.module.css";
 import Day from "./Day";
+import { useState, useEffect } from "react";
 
 export default function July({ month }) {
+  const [currentDayOfMonth, setCurrentDayOfMonth] = useState("");
+  const flag = true;
+  useEffect(() => {
+    const now = new Date();
+    const dayOfMonth = now.getDate();
+    setCurrentDayOfMonth(dayOfMonth);
+  }, []);
+  const tips = [];
+  // DayOfJune is the number in [] bellow
+  tips[1] = 22;
+  tips[3] = 21;
+  tips[22] = 23;
+  let c = 0;
+  for (let i = 0; i < tips.length; i++) {
+    if (tips[i]) {
+      c++;
+    }
+  }
+  // σ
   return (
     <>
       <header className={classes.header}>

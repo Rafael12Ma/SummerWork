@@ -26,9 +26,9 @@ export default function June({ month }) {
     <>
       {/* <p>{tips[1]}</p> */}
       <header className={classes.header}>
-        <h2>
+        <h3>
           For {month} i Worked {c} days
-        </h2>
+        </h3>
         <h2>{month}</h2>
         <div className={classes.days}>
           <div>

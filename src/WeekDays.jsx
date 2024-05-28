@@ -42,6 +42,7 @@ export default function WeekDays() {
 
   return (
     <>
+      <h1>testtest</h1>
       <h2>
         Υπομονή έμειναν άλλες {numDaysLeft} μέρες ή{" "}
         {Math.floor(numDaysLeft / 7)} εβδομάδες{" "}
@@ -51,6 +52,11 @@ export default function WeekDays() {
         <July month="July" />
         <August month="August" />
       </div>
+      <p>
+        NA DW GIATI DEN MPORW NA KANW GIT ADD . SE AUTO $ git push origin master
+        fatal: 'origin' does not appear to be a git repository fatal: Could not
+        read from remote repository.
+      </p>
       <p>Πρόβλεψη - 62 μέρες δουλειά</p>
     </>
   );
