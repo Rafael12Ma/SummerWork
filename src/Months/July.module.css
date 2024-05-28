@@ -1,0 +1,29 @@
+.days {
+  display: flex;
+  gap: 20px;
+  border: 1px solid red;
+  padding: 20px;
+}
+
+/* .days > div > p:hover {
+  background-color: red;
+} */
+.test {
+  background-color: greenyellow;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+.tip {
+  color: rgb(191, 146, 233);
+  font-size: 0.8rem;
+}
+
+.opac {
+  opacity: 0.4;
+}
+
+.falseTest {
+  background-color: blue;
+}
