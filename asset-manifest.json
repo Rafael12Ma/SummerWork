@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/SummerWork/static/css/main.58a2b427.css",
-    "main.js": "/SummerWork/static/js/main.8b82375e.js",
+    "main.js": "/SummerWork/static/js/main.84611c40.js",
     "static/js/453.bb0413dd.chunk.js": "/SummerWork/static/js/453.bb0413dd.chunk.js",
     "static/media/logo.svg": "/SummerWork/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/SummerWork/index.html",
     "main.58a2b427.css.map": "/SummerWork/static/css/main.58a2b427.css.map",
-    "main.8b82375e.js.map": "/SummerWork/static/js/main.8b82375e.js.map",
+    "main.84611c40.js.map": "/SummerWork/static/js/main.84611c40.js.map",
     "453.bb0413dd.chunk.js.map": "/SummerWork/static/js/453.bb0413dd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.58a2b427.css",
-    "static/js/main.8b82375e.js"
+    "static/js/main.84611c40.js"
   ]
 }
