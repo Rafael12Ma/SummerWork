@@ -1,6 +1,11 @@
 .App {
   text-align: center;
 }
+@media only screen and (max-width: 600px) {
+  .App-header {
+    background-color: lightblue;
+  }
+}
 
 .App-logo {
   height: 40vmin;
@@ -14,7 +19,7 @@
 }
 
 .App-header {
-  background-color: #0b0d12;
+  background-color: #000512;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +40,18 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.date {
+  justify-content: flex-end;
+  display: flex;
+  background-color: #000512;
+  color: white;
+  padding-right: 40px;
+  padding-top: 20px;
+  font-family: sans-serif;
+}
+
+.time {
+  font-size: 20px;
 }

@@ -6,3 +6,8 @@
   justify-content: center;
   margin-bottom: 5rem;
 }
+
+.date {
+  justify-content: flex-end;
+  display: flex;
+}
