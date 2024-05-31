@@ -39,21 +39,49 @@ function App() {
   const d = new Date();
   let monthName = month[d.getMonth()];
 
+  const [inputValue, setInputValue] = useState("");
+  const [buttonClicked, setButtonClicked] = useState(false);
+  function setChange(event) {
+    setInputValue(event.target.value);
+    setButtonClicked(false);
+  }
+  function handleButton() {
+    setButtonClicked(!buttonClicked);
+  }
+
   return (
     <>
-      <div className="date">
-        <h1>
-          {currentDayOfMonth}-{monthName}{" "}
-        </h1>
-        <p className="time"> {date.toLocaleTimeString()}</p>
-      </div>
-      <div className="App">
-        <header className="App-header">
-          <h1>Tips Καλοκαίρι</h1>
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <WeekDays />
-        </header>
-      </div>
+      {(inputValue == 2002) & buttonClicked ? (
+        <>
+          <div className="date">
+            <h1>
+              {currentDayOfMonth}-{monthName}{" "}
+            </h1>
+            <p className="time"> {date.toLocaleTimeString()}</p>
+          </div>
+          <div className="App">
+            <header className="App-header">
+              <h1>Tips Καλοκαίρι</h1>
+              <WeekDays />
+            </header>
+          </div>
+        </>
+      ) : (
+        <div className="App-header">
+          <label className="label">Enter pin to unlock</label>
+          <br />
+          <input
+            onChange={setChange}
+            value={inputValue}
+            type="text"
+            placeholder="Enter Pin"
+            className="input"
+          />
+          <button onClick={handleButton} className="btn">
+            Login
+          </button>
+        </div>
+      )}
     </>
   );
 }
