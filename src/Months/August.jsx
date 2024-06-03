@@ -145,6 +145,7 @@ export default function Ausust({ month }) {
             <TenPrecent title="Προς διάθεση" income={salary / 10} />
             <TenPrecent title="Μελλοντικές Επενδύσεις " income={salary / 10} />
             <TenPrecent title="Sb" income={salary / 100} />
+            
           </div>
         )}
       </header>
