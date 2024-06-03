@@ -4,6 +4,7 @@ import TenPrecent from "./tenPrecent";
 import { useState, useEffect } from "react";
 
 export default function July({ month }) {
+  const [isClicked, setIsClicked] = useState(false);
   const [currentDayOfMonth, setCurrentDayOfMonth] = useState("");
   useEffect(() => {
     const now = new Date();
@@ -120,21 +121,31 @@ export default function July({ month }) {
             {/* <Day dayOfMonth="-" tipOfTheDay="" /> */}
           </div>
         </div>
-        <div className={classes.box}>
-          <h3>
-            {month} : For {c} days --{">"} {salary}
-          </h3>
-          {/* {isChanged && <p>einai true</p>} */}
-          <h4>
-            Σε {c} μέρες έβγαλα {sum} τιπς
-          </h4>
-          <TenPrecent title="Μελλοντικές Σπουδές" income={salary / 10} />
-          <TenPrecent title="Διασκέδαση" income={salary / 10} />
-          <TenPrecent title="Αναγκαία" income={salary * 0.5} />
-          <TenPrecent title="Προς διάθεση" income={salary / 10} />
-          <TenPrecent title="Μελλοντικές Επενδύσεις " income={salary / 10} />
-          <TenPrecent title="Sb" income={salary / 100} />
-        </div>
+        <button
+          className={classes.btn}
+          onClick={() => {
+            setIsClicked(!isClicked);
+          }}
+        >
+          see more
+        </button>
+        {isClicked && (
+          <div className={classes.box}>
+            <h3>
+              {month} : For {c} days --{">"} {salary}
+            </h3>
+            {/* {isChanged && <p>einai true</p>} */}
+            <h4>
+              Σε {c} μέρες έβγαλα {sum} τιπς
+            </h4>
+            <TenPrecent title="Μελλοντικές Σπουδές" income={salary / 10} />
+            <TenPrecent title="Διασκέδαση" income={salary / 10} />
+            <TenPrecent title="Αναγκαία" income={salary * 0.5} />
+            <TenPrecent title="Προς διάθεση" income={salary / 10} />
+            <TenPrecent title="Μελλοντικές Επενδύσεις " income={salary / 10} />
+            <TenPrecent title="Sb" income={salary / 100} />
+          </div>
+        )}
       </header>
     </>
   );

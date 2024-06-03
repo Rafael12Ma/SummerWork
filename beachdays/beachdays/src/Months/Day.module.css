@@ -10,11 +10,6 @@
   border-radius: 20%;
   align-items: center;
 }
-@media (max-width: 600px) {
-  .rest {
-    background-color: lightblue;
-  }
-}
 .rest {
   background-color: red;
   display: flex;

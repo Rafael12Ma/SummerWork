@@ -2,23 +2,11 @@ import June from "./Months/June";
 import July from "./Months/July";
 import August from "./Months/August";
 import classes from "./WeekDays.module.css";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 export default function WeekDays() {
-  let ref = useRef(0);
-
-  const [plus, setPlus] = useState(0);
   const [currentDayOfMonth, setCurrentDayOfMonth] = useState("");
   const flag = true;
-  function handleRef() {
-    ref.current = ref.current + 1;
-    // alert(`You clicked ${ref.current} times`);
-  }
-  let counter = 0;
-  function handlePlus() {
-    setPlus(plus + 1);
-    alert(`You clicked ${plus} times`);
-  }
   useEffect(() => {
     const now = new Date();
     const dayOfMonth = now.getDate();
@@ -58,20 +46,14 @@ export default function WeekDays() {
         Υπομονή έμειναν άλλες {numDaysLeft} μέρες ή{" "}
         {Math.floor(numDaysLeft / 7)} εβδομάδες{" "}
       </h2>
-
       <div className={classes.container}>
         <June month="June" />
         <July month="July" />
         <August month="August" />
       </div>
-      <button onClick={handleRef}>+</button>
-      <button onClick={handlePlus}>+</button>
 
-      <p>{ref.current}</p>
-      <p>{counter}</p>
-
-      {/* <p>Πρόβλεψη 62 μέρες δουλειά :</p> */}
-      {/* <p> 3720 + 900 τιπς</p> */}
+      <p>Πρόβλεψη 62 μέρες δουλειά :</p>
+      <p> 3720 + 900 τιπς</p>
     </>
   );
 }

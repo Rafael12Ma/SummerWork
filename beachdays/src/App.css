@@ -1,6 +1,11 @@
 .App {
   text-align: center;
 }
+@media only screen and (max-width: 600px) {
+  .App-header {
+    background-color: lightblue;
+  }
+}
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +40,71 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.date {
+  justify-content: flex-end;
+  display: flex;
+  background-color: #000512;
+  color: white;
+  padding-right: 40px;
+  padding-top: 20px;
+  font-family: sans-serif;
+}
+
+.time {
+  font-size: 20px;
+}
+
+.input {
+  width: 19.5rem;
+  height: 5rem;
+  border: 2px solid rgb(61, 61, 255);
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 400;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.label {
+  color: rgb(78, 78, 246);
+  font-size: 4rem;
+}
+
+.btn {
+  width: 20rem;
+  height: 5rem;
+  margin-top: 10px;
+  background-color: #0f13ff;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.hint {
+  width: 20rem;
+  height: 5rem;
+  margin-top: 10px;
+  background-color: #08e222;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.hint:hover {
+  color: #000512;
+}
+
+.hint:active {
+  opacity: 0.8;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+.wrong {
+  color: red;
 }

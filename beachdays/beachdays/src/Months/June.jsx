@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import TenPrecent from "./tenPrecent";
 
 export default function June({ month }) {
-  const [isClicked, setIsClicked] = useState(false);
   const [currentDayOfMonth, setCurrentDayOfMonth] = useState("");
   useEffect(() => {
     const now = new Date();
@@ -124,31 +123,21 @@ export default function June({ month }) {
             <Day dayOfMonth="30" tipOfTheDay={tips[30]} />
           </div>
         </div>
-        <button
-          className={classes.btn}
-          onClick={() => {
-            setIsClicked(!isClicked);
-          }}
-        >
-          see more
-        </button>
-        {isClicked && (
-          <div className={classes.box}>
-            <h3>
-              {month} : For {c} days --{">"} {salary}
-            </h3>
-            {/* {isChanged && <p>einai true</p>} */}
-            <h4>
-              Σε {c} μέρες έβγαλα {sum} τιπς
-            </h4>
-            <TenPrecent title="Μελλοντικές Σπουδές" income={salary / 10} />
-            <TenPrecent title="Διασκέδαση" income={salary / 10} />
-            <TenPrecent title="Αναγκαία" income={salary * 0.5} />
-            <TenPrecent title="Προς διάθεση" income={salary / 10} />
-            <TenPrecent title="Μελλοντικές Επενδύσεις " income={salary / 10} />
-            <TenPrecent title="Sb" income={salary / 100} />
-          </div>
-        )}
+        <div className={classes.box}>
+          <h3>
+            {month} : For {c} days --{">"} {salary}
+          </h3>
+          {/* {isChanged && <p>einai true</p>} */}
+          <h4>
+            Σε {c} μέρες έβγαλα {sum} τιπς
+          </h4>
+          <TenPrecent title="Μελλοντικές Σπουδές" income={salary / 10} />
+          <TenPrecent title="Διασκέδαση" income={salary / 10} />
+          <TenPrecent title="Αναγκαία" income={salary * 0.5} />
+          <TenPrecent title="Προς διάθεση" income={salary / 10} />
+          <TenPrecent title="Μελλοντικές Επενδύσεις " income={salary / 10} />
+          <TenPrecent title="Sb" income={salary / 100} />
+        </div>
       </header>
     </>
   );
