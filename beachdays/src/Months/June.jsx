@@ -1,17 +1,12 @@
 import classes from "./June.module.css";
 import Day from "./Day";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import TenPrecent from "./tenPrecent";
 
-export default function June({ month }) {
+export default function June({ month, setSallary }) {
   const [isClicked, setIsClicked] = useState(false);
-  const [currentDayOfMonth, setCurrentDayOfMonth] = useState("");
-  useEffect(() => {
-    const now = new Date();
-    const dayOfMonth = now.getDate();
-    setCurrentDayOfMonth(dayOfMonth);
-  }, []);
   const tips = [];
+
   // DayOfJune is the number in [] bellow
   tips[1] = 0;
   tips[2] = 0;
@@ -33,7 +28,7 @@ export default function June({ month }) {
   tips[18] = 0;
   tips[19] = 0;
   tips[20] = 0;
-  tips[21] = 0;
+  tips[21] = "-";
   tips[22] = "-";
   tips[23] = "-";
   tips[24] = "-";
@@ -46,14 +41,14 @@ export default function June({ month }) {
   tips[31] = "-";
 
   // ___________________--
-
   let c = 0;
   for (let i = 0; i < tips.length; i++) {
     if (tips[i] > 0) {
       c++;
     }
   }
-  let salary = c * 60;
+  let misthos = 60;
+  let salary = c * misthos;
   // σ
   let sum = 0;
   for (let i = 1; i < tips.length; i++) {
@@ -61,6 +56,7 @@ export default function June({ month }) {
       sum = sum + tips[i];
     }
   }
+  setSallary(salary);
   return (
     <>
       {/* <p>{tips[1]}</p> */}
@@ -134,17 +130,15 @@ export default function June({ month }) {
         </button>
         {isClicked && (
           <div className={classes.box}>
-            <h3>
-              {month} : For {c} days --{">"} {salary}
-            </h3>
-            {/* {isChanged && <p>einai true</p>} */}
-            <h4>
-              Σε {c} μέρες έβγαλα {sum} τιπς
-            </h4>
-            <TenPrecent title="Μελλοντικές Σπουδές" income={salary / 10} />
+            <div className={classes.innerBox}>
+              <p>Days : {c} /31</p>
+              <p>Sallary : {salary}</p>
+              <p>Tips : {sum}</p>
+            </div>
+            <TenPrecent title="Σπουδές" income={salary / 10} />
             <TenPrecent title="Διασκέδαση" income={salary / 10} />
             <TenPrecent title="Αναγκαία" income={salary * 0.5} />
-            <TenPrecent title="Προς διάθεση" income={salary / 10} />
+            <TenPrecent title="Προς διάθεση" income={salary * 0.19} />
             <TenPrecent title="Μελλοντικές Επενδύσεις " income={salary / 10} />
             <TenPrecent title="Sb" income={salary / 100} />
           </div>

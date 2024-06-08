@@ -9,7 +9,6 @@ export default function WeekDays() {
 
   const [plus, setPlus] = useState(0);
   const [currentDayOfMonth, setCurrentDayOfMonth] = useState("");
-  const flag = true;
   function handleRef() {
     ref.current = ref.current + 1;
     // alert(`You clicked ${ref.current} times`);
@@ -42,16 +41,18 @@ export default function WeekDays() {
   const d = new Date();
   let monthName = month[d.getMonth()];
   let numDaysLeft = 0;
-  if (monthName == "May") {
+  if (monthName === "May") {
     numDaysLeft = 90 + 30 - currentDayOfMonth;
-  } else if (monthName == "June") {
+  } else if (monthName === "June") {
     numDaysLeft = 90 - currentDayOfMonth;
-  } else if (monthName == "July") {
+  } else if (monthName === "July") {
     numDaysLeft = 60 - currentDayOfMonth;
   } else {
     numDaysLeft = 30 - currentDayOfMonth;
   }
-
+  const [sallaryJune, setSallaryJune] = useState(0);
+  const [sallaryJuly, setSallaryJuly] = useState(0);
+  const [sallaryAugust, setSallaryAugust] = useState(0);
   return (
     <>
       <h2>
@@ -60,18 +61,18 @@ export default function WeekDays() {
       </h2>
 
       <div className={classes.container}>
-        <June month="June" />
-        <July month="July" />
-        <August month="August" />
+        <June month="June" setSallary={setSallaryJune} />
+        <July month="July" setSallary={setSallaryJuly} />
+        <August month="August" setSallary={setSallaryAugust} />
       </div>
       <button onClick={handleRef}>+</button>
       <button onClick={handlePlus}>+</button>
-
       <p>{ref.current}</p>
       <p>{counter}</p>
 
       {/* <p>Πρόβλεψη 62 μέρες δουλειά :</p> */}
       {/* <p> 3720 + 900 τιπς</p> */}
+      <p>Summary = {sallaryJune + sallaryJuly + sallaryAugust}</p>
     </>
   );
 }

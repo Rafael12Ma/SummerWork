@@ -3,7 +3,6 @@ import WeekDays from "./WeekDays";
 import { useState, useEffect, useRef } from "react";
 function App() {
   const [currentDayOfMonth, setCurrentDayOfMonth] = useState("");
-  const flag = true;
   useEffect(() => {
     const now = new Date();
     const dayOfMonth = now.getDate();
@@ -69,7 +68,10 @@ function App() {
   const pin2 = parseInt(pin1);
 
   const [hint, setHint] = useState();
-
+  const [isChanged, setIsChanged] = useState();
+  function handleChanging(event) {
+    setIsChanged(event.target.value);
+  }
   return (
     <>
       {/* test changes */}
@@ -77,12 +79,20 @@ function App() {
         <>
           <div className="date">
             <h1>
-              {currentDayOfMonth}-{monthName}{" "}
+              {currentDayOfMonth} - {monthName}
+              {"  "}
             </h1>
             <p className="time"> {date.toLocaleTimeString()}</p>
           </div>
           <div className="App">
             <header className="App-header">
+              <input
+                onChange={(e) => handleChanging(e)}
+                placeholder="Press something..."
+                autoFocus
+                type="text"
+              />
+              <p>{isChanged}</p>
               <h1>Tips Καλοκαίρι</h1>
               <WeekDays />
             </header>
