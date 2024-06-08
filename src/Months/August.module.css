@@ -30,6 +30,8 @@ h3 {
 
 .box {
   background-color: rgb(27, 36, 44);
+  margin-top: 20px;
+  padding: 0.5rem;
 }
 .btn {
   /* border-radius: 60%; */
@@ -40,4 +42,10 @@ h3 {
   color: black;
   font-weight: 700;
   margin-top: 2rem;
+}
+
+.innerBox {
+  justify-content: center;
+  margin-right: 20px;
+  text-align: center;
 }
