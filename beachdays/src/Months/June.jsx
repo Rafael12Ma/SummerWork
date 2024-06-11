@@ -18,7 +18,7 @@ export default function June({ month, setSallary }) {
   tips[8] = 0;
   tips[9] = 0;
   tips[10] = 0;
-  tips[11] = 0;
+  tips[11] = 15.7;
   tips[12] = 0;
   tips[13] = 0;
   tips[14] = 0;
