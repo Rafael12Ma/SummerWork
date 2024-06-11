@@ -53,9 +53,10 @@ function App() {
     setInputValue(event.target.value);
     setButtonClicked(false);
     counterInput.current = counterInput.current + 1;
+    console.log(counterInput);
     if (counterInput.current > 1) {
       // buttonRef.current.focus();
-      setButtonClicked(!buttonClicked);
+      setButtonClicked(true);
     }
   }
   // function handleButton() {
@@ -66,7 +67,6 @@ function App() {
   const strMonth = monthPin.toString();
   const pin1 = strDayMonth + strMonth;
   const pin2 = parseInt(pin1);
-
   const [hint, setHint] = useState();
   const [isChanged, setIsChanged] = useState();
   function handleChanging(event) {
