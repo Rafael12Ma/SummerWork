@@ -2,6 +2,7 @@ import classes from "./August.module.css";
 import Day from "./Day";
 import TenPrecent from "./tenPrecent";
 import { useState } from "react";
+import Modal from "./Modal";
 
 export default function Ausust({ month, setSallary }) {
   const [isClicked, setIsClicked] = useState(false);
@@ -55,6 +56,10 @@ export default function Ausust({ month, setSallary }) {
     }
   }
   setSallary(salary);
+  // const [modalIsVisible, setModalIsVisible] = useState(true);
+  function HideModal() {
+    setIsClicked(false);
+  }
   return (
     <>
       {/* <p>{currentDayOfMonth}</p> */}
@@ -128,19 +133,31 @@ export default function Ausust({ month, setSallary }) {
           see more
         </button>
         {isClicked && (
-          <div className={classes.box}>
-            <div className={classes.innerBox}>
-              <p>Days : {c} /31</p>
-              <p>Sallary : {salary}</p>
-              <p>Tips : {sum}</p>
+          <Modal onClose={HideModal}>
+            <div className={classes.box}>
+              <div className={classes.innerBox}>
+                <div
+                  onClick={() => {
+                    setIsClicked(false);
+                  }}
+                >
+                  <p className={classes.exitButton}>X</p>
+                </div>
+                <p>Days : {c} out of 31</p>
+                <p>Sallary : {salary}</p>
+                <p>Tips : {sum}</p>
+              </div>
+              <TenPrecent title="Σπουδές" income={salary / 10} />
+              <TenPrecent title="Διασκέδαση" income={salary / 10} />
+              <TenPrecent title="Αναγκαία" income={salary * 0.5} />
+              <TenPrecent title="Προς διάθεση" income={salary * 0.19} />
+              <TenPrecent
+                title="Μελλοντικές Επενδύσεις "
+                income={salary / 10}
+              />
+              <TenPrecent title="Sb" income={salary / 100} />
             </div>
-            <TenPrecent title="Σπουδές" income={salary / 10} />
-            <TenPrecent title="Διασκέδαση" income={salary / 10} />
-            <TenPrecent title="Αναγκαία" income={salary * 0.5} />
-            <TenPrecent title="Προς διάθεση" income={salary / 10} />
-            <TenPrecent title="Μελλοντικές Επενδύσεις " income={salary / 10} />
-            <TenPrecent title="Sb" income={salary / 100} />
-          </div>
+          </Modal>
         )}
       </header>
     </>

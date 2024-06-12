@@ -2,11 +2,11 @@ import classes from "./June.module.css";
 import Day from "./Day";
 import { useState } from "react";
 import TenPrecent from "./tenPrecent";
+import Modal from "./Modal";
 
 export default function June({ month, setSallary }) {
   const [isClicked, setIsClicked] = useState(false);
   const tips = [];
-
   // DayOfJune is the number in [] bellow
   tips[1] = 0;
   tips[2] = 0;
@@ -57,6 +57,11 @@ export default function June({ month, setSallary }) {
     }
   }
   setSallary(salary);
+
+  // const [modalIsVisible, setModalIsVisible] = useState(true);
+  function HideModal() {
+    setIsClicked(false);
+  }
   return (
     <>
       {/* <p>{tips[1]}</p> */}
@@ -124,24 +129,37 @@ export default function June({ month, setSallary }) {
           className={classes.btn}
           onClick={() => {
             setIsClicked(!isClicked);
+            // setModalIsVisible(true);
           }}
         >
           see more
         </button>
         {isClicked && (
-          <div className={classes.box}>
-            <div className={classes.innerBox}>
-              <p>Days : {c} /31</p>
-              <p>Sallary : {salary}</p>
-              <p>Tips : {sum}</p>
+          <Modal onClose={HideModal}>
+            <div className={classes.box}>
+              <div className={classes.innerBox}>
+                <div
+                  onClick={() => {
+                    setIsClicked(false);
+                  }}
+                >
+                  <p className={classes.exitButton}>X</p>
+                </div>
+                <p>Days : {c} out of 31</p>
+                <p>Sallary : {salary}</p>
+                <p>Tips : {sum}</p>
+              </div>
+              <TenPrecent title="Σπουδές" income={salary / 10} />
+              <TenPrecent title="Διασκέδαση" income={salary / 10} />
+              <TenPrecent title="Αναγκαία" income={salary * 0.5} />
+              <TenPrecent title="Προς διάθεση" income={salary * 0.19} />
+              <TenPrecent
+                title="Μελλοντικές Επενδύσεις "
+                income={salary / 10}
+              />
+              <TenPrecent title="Sb" income={salary / 100} />
             </div>
-            <TenPrecent title="Σπουδές" income={salary / 10} />
-            <TenPrecent title="Διασκέδαση" income={salary / 10} />
-            <TenPrecent title="Αναγκαία" income={salary * 0.5} />
-            <TenPrecent title="Προς διάθεση" income={salary * 0.19} />
-            <TenPrecent title="Μελλοντικές Επενδύσεις " income={salary / 10} />
-            <TenPrecent title="Sb" income={salary / 100} />
-          </div>
+          </Modal>
         )}
       </header>
     </>

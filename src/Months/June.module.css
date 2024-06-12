@@ -33,9 +33,10 @@ h3 {
 }
 
 .box {
-  background-color: rgb(27, 36, 44);
+  background-color: rgb(15, 11, 22);
   margin-top: 20px;
   padding: 0.5rem;
+  color: white;
 }
 
 .btn {
@@ -48,9 +49,26 @@ h3 {
   margin-top: 2rem;
 }
 
-
 .innerBox {
-  justify-content: center;
   margin-right: 20px;
-  text-align: center;
+  text-align: right;
+  color: white;
+}
+
+.exitButton {
+  cursor: pointer;
+  justify-content: flex-end;
+  display: flex;
+  color: rgb(255, 0, 0);
+  font-weight: 700;
+  font-size: 1.5rem;
+  transition: font-size 1s;
+}
+
+.exitButton:hover {
+  font-size: 1.7rem;
+}
+
+.exitButton:active {
+  font-size: 1.8rem;
 }
