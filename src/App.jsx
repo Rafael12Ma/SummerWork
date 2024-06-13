@@ -69,8 +69,24 @@ function App() {
   const pin2 = parseInt(pin1);
   const [hint, setHint] = useState();
   const [isChanged, setIsChanged] = useState();
+
   function handleChanging(event) {
+    event.preventDefault();
+    const message = {
+      tip: event.target.value,
+    };
+    fetch("http://localhost:8080/tips", {
+      method: "Post",
+      body: JSON.stringify(message),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     setIsChanged(event.target.value);
+  }
+
+  function submitHandler(event) {
+    event.prevent.preventDefault();
   }
   return (
     <>
@@ -86,12 +102,18 @@ function App() {
           </div>
           <div className="App">
             <header className="App-header">
-              <input
-                onChange={(e) => handleChanging(e)}
-                placeholder="Press something..."
-                autoFocus
-                type="text"
-              />
+              <form className="form" action="" onSubmit={submitHandler}>
+                <input
+                  required
+                  onChange={(e) => handleChanging(e)}
+                  placeholder="Press something..."
+                  autoFocus
+                  type="text"
+                />
+                <button type="submit" className="btn">
+                  Dwse
+                </button>
+              </form>
               <p>{isChanged}</p>
               <h1>Tips Καλοκαίρι</h1>
               <WeekDays />
