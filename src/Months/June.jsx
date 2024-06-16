@@ -21,14 +21,14 @@ export default function June({ month, setSallary }) {
   tips[11] = 0;
   tips[12] = 0;
   tips[13] = 0;
-  tips[14] = "-";
-  tips[15] = "-"; //4 wres
-  tips[16] = "-"; //4 wres
+  tips[14] = 0;
+  tips[15] = 20; //4 wres
+  tips[16] = 20; //4 wres
   tips[17] = 0;
   tips[18] = 0;
   tips[19] = 0;
   tips[20] = 0;
-  tips[21] = "-";
+  tips[21] = 0;
   tips[22] = "-";
   tips[23] = "-";
   tips[24] = "-";
@@ -48,7 +48,7 @@ export default function June({ month, setSallary }) {
     }
   }
   let misthos = 60;
-  let salary = c * misthos;
+  let salary = c * misthos - 80;
   // σ
   let sum = 0;
   for (let i = 1; i < tips.length; i++) {

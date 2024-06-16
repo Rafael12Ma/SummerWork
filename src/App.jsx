@@ -9,7 +9,6 @@ function App() {
     setCurrentDayOfMonth(dayOfMonth);
   }, []);
 
-  const pin = 2002;
   let monthPin = 0;
   const month = [
     "January",
@@ -28,7 +27,6 @@ function App() {
 
   // ------
   var [date, setDate] = useState(new Date());
-  let buttonRef = useRef(null);
   useEffect(() => {
     var timer = setInterval(() => setDate(new Date()), 1000);
     return function cleanup() {
@@ -39,9 +37,9 @@ function App() {
   // ------
   const d = new Date();
   let monthName = month[d.getMonth()];
-  if (monthName == "June") {
+  if (monthName === "June") {
     monthPin = 6;
-  } else if (monthName == "July") {
+  } else if (monthName === "July") {
     monthPin = 7;
   } else {
     monthPin = 8;
@@ -86,7 +84,7 @@ function App() {
   }
 
   function submitHandler(event) {
-    event.prevent.preventDefault();
+    event.preventDefault();
   }
   return (
     <>
