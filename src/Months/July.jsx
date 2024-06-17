@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 import Summary from "../Summary";
 import Modal from "./Modal";
 
-export default function July({ month, setSallary }) {
+export default function July({ month, getSallary }) {
   const [isClicked, setIsClicked] = useState(false);
 
   const tips = [];
@@ -58,7 +58,7 @@ export default function July({ month, setSallary }) {
       sum = sum + tips[i];
     }
   }
-  setSallary(salary);
+  getSallary(salary);
   // const [modalIsVisible, setModalIsVisible] = useState(true);
   function HideModal() {
     setIsClicked(false);

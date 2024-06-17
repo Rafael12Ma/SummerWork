@@ -1,6 +1,9 @@
 import "./App.css";
+import ForBackend from "./ForBackend";
 import WeekDays from "./WeekDays";
+import PostLists from "./Backe/PostLists";
 import { useState, useEffect, useRef } from "react";
+import MainHeader from "./Backe/MainHeader";
 function App() {
   const [currentDayOfMonth, setCurrentDayOfMonth] = useState("");
   useEffect(() => {
@@ -68,24 +71,29 @@ function App() {
   const [hint, setHint] = useState();
   const [isChanged, setIsChanged] = useState();
 
-  function handleChanging(event) {
-    event.preventDefault();
-    const message = {
-      tip: event.target.value,
-    };
-    fetch("http://localhost:8080/tips", {
-      method: "Post",
-      body: JSON.stringify(message),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    setIsChanged(event.target.value);
+  // function handleChanging(event) {
+  //   event.preventDefault();
+  //   const message = {
+  //     tip: event.target.value,
+  //   };
+  //   fetch("http://localhost:8080/tips", {
+  //     method: "Post",
+  //     body: JSON.stringify(message),
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   });
+  //   setIsChanged(event.target.value);
+  // }
+
+  const [modalIsVisible, setModalIsVisible] = useState(false);
+  function hideModalHandler() {
+    setModalIsVisible(false);
+  }
+  function showModalHandler() {
+    setModalIsVisible(true);
   }
 
-  function submitHandler(event) {
-    event.preventDefault();
-  }
   return (
     <>
       {/* test changes */}
@@ -100,7 +108,16 @@ function App() {
           </div>
           <div className="App">
             <header className="App-header">
-              <form className="form" action="" onSubmit={submitHandler}>
+              <MainHeader onCreatePost={showModalHandler} />
+              <PostLists
+                isPosting={modalIsVisible}
+                onStopPosting={hideModalHandler}
+              />
+              <ForBackend />
+              <br />
+              <br />
+              <br />
+              {/* <form className="form" action="" onSubmit={submitHandler}>
                 <input
                   required
                   onChange={(e) => handleChanging(e)}
@@ -111,7 +128,7 @@ function App() {
                 <button type="submit" className="btn">
                   Dwse
                 </button>
-              </form>
+              </form> */}
               <p>{isChanged}</p>
               <h1>Tips Καλοκαίρι</h1>
               <WeekDays />

@@ -4,7 +4,7 @@ import { useState } from "react";
 import TenPrecent from "./tenPrecent";
 import Modal from "./Modal";
 
-export default function June({ month, setSallary }) {
+export default function June({ month, getSallary }) {
   const [isClicked, setIsClicked] = useState(false);
   const tips = [];
   // DayOfJune is the number in [] bellow
@@ -56,7 +56,7 @@ export default function June({ month, setSallary }) {
       sum = sum + tips[i];
     }
   }
-  setSallary(salary);
+  getSallary(salary);
 
   // const [modalIsVisible, setModalIsVisible] = useState(true);
   function HideModal() {

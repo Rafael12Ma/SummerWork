@@ -44,6 +44,16 @@ export default function WeekDays() {
   const [sallaryAugust, setSallaryAugust] = useState(0);
   // + atoma tin mera p.x 3+2+4+4+3=16*3=48 se 6 meres
   let petrol = 0;
+
+  function GetSallaryJune(sal) {
+    setSallaryJune(sal);
+  }
+  function GetSallaryJuly(sal) {
+    setSallaryJuly(sal);
+  }
+  function GetSallaryAugust(sal) {
+    setSallaryAugust(sal);
+  }
   return (
     <>
       <h2>
@@ -52,9 +62,9 @@ export default function WeekDays() {
       </h2>
 
       <div className={classes.container}>
-        <June month="June" setSallary={setSallaryJune} />
-        <July month="July" setSallary={setSallaryJuly} />
-        <August month="August" setSallary={setSallaryAugust} />
+        <June month="June" getSallary={GetSallaryJune} />
+        <July month="July" getSallary={GetSallaryJuly} />
+        <August month="August" getSallary={GetSallaryAugust} />
       </div>
       {/* <button onClick={handleRef}>+</button>
       <button onClick={handlePlus}>+</button>

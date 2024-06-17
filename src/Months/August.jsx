@@ -4,7 +4,7 @@ import TenPrecent from "./tenPrecent";
 import { useState } from "react";
 import Modal from "./Modal";
 
-export default function Ausust({ month, setSallary }) {
+export default function Ausust({ month, getSallary }) {
   const [isClicked, setIsClicked] = useState(false);
   const tips = [];
 
@@ -55,7 +55,7 @@ export default function Ausust({ month, setSallary }) {
       sum = sum + tips[i];
     }
   }
-  setSallary(salary);
+  getSallary(salary);
   // const [modalIsVisible, setModalIsVisible] = useState(true);
   function HideModal() {
     setIsClicked(false);
