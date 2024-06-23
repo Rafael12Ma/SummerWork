@@ -22,15 +22,15 @@ export default function June({ month, getSallary }) {
   tips[12] = 0;
   tips[13] = 0;
   tips[14] = 0;
-  tips[15] = 20; //4 wres
-  tips[16] = 20; //4 wres
+  tips[15] = 3.5; //4 wres
+  tips[16] = 3.5; //4 wres
   tips[17] = 0;
   tips[18] = 0;
   tips[19] = 0;
   tips[20] = 0;
   tips[21] = 0;
-  tips[22] = "-";
-  tips[23] = "-";
+  tips[22] = 12;
+  tips[23] = 14;
   tips[24] = "-";
   tips[25] = "-";
   tips[26] = "-";
@@ -48,7 +48,7 @@ export default function June({ month, getSallary }) {
     }
   }
   let misthos = 60;
-  let salary = c * misthos - 80;
+  let salary = c * misthos;
   // σ
   let sum = 0;
   for (let i = 1; i < tips.length; i++) {
@@ -148,6 +148,11 @@ export default function June({ month, getSallary }) {
                 <p>Days : {c} out of 31</p>
                 <p>Sallary : {salary}</p>
                 <p>Tips : {sum}</p>
+                <div>
+                  <p>Σύνολο Έσοδα : {salary + sum}</p>
+                  <p>M.O Tips : {sum / c}</p>
+                  <p className={classes.small}>Έξοδα πρωινό : {c * 2.2}</p>
+                </div>
               </div>
               <TenPrecent title="Σπουδές" income={salary / 10} />
               <TenPrecent title="Διασκέδαση" income={salary / 10} />

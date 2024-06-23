@@ -43,7 +43,7 @@ export default function WeekDays() {
   const [sallaryJuly, setSallaryJuly] = useState(0);
   const [sallaryAugust, setSallaryAugust] = useState(0);
   // + atoma tin mera p.x 3+2+4+4+3=16*3=48 se 6 meres
-  let petrol = 0;
+  let petrol = 3.5 + 3.5 + 3.5;
 
   function GetSallaryJune(sal) {
     setSallaryJune(sal);

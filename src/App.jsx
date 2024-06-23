@@ -1,5 +1,4 @@
 import "./App.css";
-import ForBackend from "./ForBackend";
 import WeekDays from "./WeekDays";
 import PostLists from "./Backe/PostLists";
 import { useState, useEffect, useRef } from "react";
@@ -108,12 +107,13 @@ function App() {
           </div>
           <div className="App">
             <header className="App-header">
-              <MainHeader onCreatePost={showModalHandler} />
+              {/* AUTO TO KOMMATI KWDIKA  EINAI GIA GIA NA KANW FETCH */}
+              {/* <MainHeader onCreatePost={showModalHandler} />
               <PostLists
                 isPosting={modalIsVisible}
                 onStopPosting={hideModalHandler}
-              />
-              <ForBackend />
+              /> */}
+
               <br />
               <br />
               <br />
