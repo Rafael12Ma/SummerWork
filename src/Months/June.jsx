@@ -31,7 +31,7 @@ export default function June({ month, getSallary }) {
   tips[21] = 0;
   tips[22] = 12;
   tips[23] = 14;
-  tips[24] = "-";
+  tips[24] = 8;
   tips[25] = "-";
   tips[26] = "-";
   tips[27] = "-";
@@ -47,7 +47,7 @@ export default function June({ month, getSallary }) {
       c++;
     }
   }
-  let misthos = 60;
+  let misthos = 65;
   let salary = c * misthos;
   // σ
   let sum = 0;
